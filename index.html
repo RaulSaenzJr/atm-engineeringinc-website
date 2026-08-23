@@ -22,10 +22,20 @@
         <!-- Navigation -->
         <nav class="main-nav" aria-label="Main navigation">
           <ul class="nav-list">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#products" class="nav-link">Products</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+            <li class="nav-item has-dropdown">
+              <a href="#services" class="nav-link">
+                Services <span class="dropdown-arrow">&#9660;</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#services" class="dropdown-link">Engineering</a></li>
+                <li><a href="#services" class="dropdown-link">Electrician</a></li>
+                <li><a href="#services" class="dropdown-link">Design</a></li>
+                <li><a href="#services" class="dropdown-link">Consultation</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
           </ul>
         </nav>
 
@@ -48,8 +58,49 @@
       <!-- Services Section -->
       <section id="services" class="page-section">
         <div class="section-inner">
-          <h2>Services</h2>
-          <p>Services content placeholder.</p>
+          <p class="section-eyebrow">What We Do</p>
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+          <div class="services-banner">
+            <img
+              src="public/pexels-mikkel-kvist-2722911-15845461.jpg"
+              alt="Marine vessel at night"
+              class="services-banner-img"
+            />
+          </div>
+
+          <div class="services-grid">
+
+            <div class="service-card">
+              <div class="service-number">01</div>
+              <h3 class="service-name">Engineering</h3>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <a href="#" class="service-link">Learn More &rarr;</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-number">02</div>
+              <h3 class="service-name">Electrician</h3>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <a href="#" class="service-link">Learn More &rarr;</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-number">03</div>
+              <h3 class="service-name">Design</h3>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <a href="#" class="service-link">Learn More &rarr;</a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-number">04</div>
+              <h3 class="service-name">Consultation</h3>
+              <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <a href="#" class="service-link">Learn More &rarr;</a>
+            </div>
+
+          </div>
         </div>
       </section>
 

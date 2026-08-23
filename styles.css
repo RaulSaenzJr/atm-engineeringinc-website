@@ -82,8 +82,14 @@ ul {
   gap: 0.25rem;
 }
 
+.nav-item {
+  position: relative;
+}
+
 .nav-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   padding: 0.5rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 600;
@@ -92,12 +98,63 @@ ul {
   color: #aaa;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+.dropdown-arrow {
+  font-size: 0.6rem;
+  transition: transform 0.2s ease;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background-color: #141414;
+  border: 1px solid #2a2a2a;
+  min-width: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+
+.nav-item.has-dropdown:hover .dropdown-menu,
+.nav-item.has-dropdown.open .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-item.has-dropdown:hover .dropdown-arrow,
+.nav-item.has-dropdown.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  border-left: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dropdown-link:hover {
+  color: #fff;
+  background-color: #1e1e1e;
+  border-left-color: #fff;
 }
 
 /* ===== HERO SECTION ===== */
@@ -228,21 +285,126 @@ ul {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
 }
 
-.section-inner h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+.section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #666;
   margin-bottom: 1rem;
-  color: #ddd;
 }
 
-.section-inner p {
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #f0f0f0;
+  margin-bottom: 1.25rem;
+}
+
+.section-intro {
+  color: #777;
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto 4rem;
+  line-height: 1.7;
+}
+
+/* ===== SERVICES BANNER ===== */
+.services-banner {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+.services-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    #0a0a0a 100%
+  );
+}
+
+.services-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+/* ===== SERVICES GRID ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background-color: #1e1e1e;
+  border: 1px solid #1e1e1e;
+}
+
+.service-card {
+  background-color: #0a0a0a;
+  padding: 3rem 2.5rem;
+  text-align: left;
+  transition: background-color 0.25s ease;
+}
+
+.service-card:hover {
+  background-color: #111;
+}
+
+.service-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.service-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.service-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: #888;
-  font-size: 1.1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.service-link:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== FOOTER ===== */
