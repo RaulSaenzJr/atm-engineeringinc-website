@@ -1,0 +1,11 @@
+# Ignore everything
+*
+# Unignore files for Git
+!*/
+
+# Allow the following files to be tracked
+!index.html
+!styles.css
+!scripts.js
+!README.md
+!.gitignore
