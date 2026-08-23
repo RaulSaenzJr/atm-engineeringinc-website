@@ -1,3 +1,6 @@
+// ===== AUTO COPYRIGHT YEAR =====
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
