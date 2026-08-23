@@ -6,33 +6,13 @@
 
 # ===== ROOT FILES =====
 !index.html
-!package.json
-!package-lock.json
-!vite.config.js
+!styles.css
+!script.js
 !README.md
 !.gitignore
 
-# ===== SOURCE FILES =====
-!src/main.jsx
-!src/App.jsx
-
-# Global styles
-!src/styles/index.css
-
-# Components
-!src/components/Header.jsx
-!src/components/Header.css
-!src/components/Hero.jsx
-!src/components/Hero.css
-!src/components/Services.jsx
-!src/components/Products.jsx
-!src/components/About.jsx
-!src/components/Section.css
-!src/components/Footer.jsx
-!src/components/Footer.css
-
 # ===== PUBLIC ASSETS =====
-# Images are tracked; videos are not (use Git LFS or external hosting for video)
+# Images are tracked; videos are not (too large — host externally)
 !public/.gitkeep
 !public/*.jpg
 !public/*.png
