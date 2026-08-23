@@ -13,7 +13,6 @@
 
 # ===== PUBLIC ASSETS =====
 # Images are tracked; videos are not (too large — host externally)
-!public/.gitkeep
 !public/*.jpg
 !public/*.png
 !public/*.svg

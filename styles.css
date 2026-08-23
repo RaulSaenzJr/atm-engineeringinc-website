@@ -101,30 +101,118 @@ ul {
 }
 
 /* ===== HERO SECTION ===== */
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-section {
+  position: relative;
   min-height: 100vh;
-  background-color: #111;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   border-bottom: 1px solid #1a1a1a;
 }
 
-.hero-inner {
+/* Background image with Ken Burns zoom */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('public/pexels-francesco-ungaro-9973280.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: kenBurns 18s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* Dark gradient overlay */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
+  max-width: 860px;
 }
 
-.hero-inner h1 {
-  font-size: 3rem;
+.hero-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: 0.5s;
 }
 
-.hero-inner p {
-  color: #888;
+.hero-tagline {
   font-size: 1.1rem;
+  color: #ccc;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: 0.85s;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.85rem 2.25rem;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: 1.15s;
+}
+
+.hero-cta:hover {
+  background-color: #fff;
+  color: #0a0a0a;
 }
 
 /* ===== SHARED SECTION STYLES ===== */
