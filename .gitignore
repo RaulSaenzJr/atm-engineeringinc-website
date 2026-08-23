@@ -1,32 +1,40 @@
-# Dependencies
-node_modules/
+# Ignore everything
+*
 
-# Build output
-dist/
-dist-ssr/
+# Unignore directories so git can traverse into them
+!*/
 
-# Environment variables
-.env
-.env.*
-!.env.example
+# ===== ROOT FILES =====
+!index.html
+!package.json
+!package-lock.json
+!vite.config.js
+!README.md
+!.gitignore
 
-# Vite cache
-.vite/
+# ===== SOURCE FILES =====
+!src/main.jsx
+!src/App.jsx
 
-# OS files
-.DS_Store
-Thumbs.db
+# Global styles
+!src/styles/index.css
 
-# Editor directories
-.vscode/
-.idea/
+# Components
+!src/components/Header.jsx
+!src/components/Header.css
+!src/components/Hero.jsx
+!src/components/Hero.css
+!src/components/Services.jsx
+!src/components/Products.jsx
+!src/components/About.jsx
+!src/components/Section.css
+!src/components/Footer.jsx
+!src/components/Footer.css
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Large media (videos — store outside repo or use Git LFS)
-public/*.mp4
-public/*.mov
-public/*.webm
+# ===== PUBLIC ASSETS =====
+# Images are tracked; videos are not (use Git LFS or external hosting for video)
+!public/.gitkeep
+!public/*.jpg
+!public/*.png
+!public/*.svg
+!public/*.gif
