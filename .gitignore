@@ -6,6 +6,6 @@
 # Allow the following files to be tracked
 !index.html
 !styles.css
-!scripts.js
+!script.js
 !README.md
 !.gitignore
