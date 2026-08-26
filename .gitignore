@@ -6,6 +6,7 @@
 
 # ===== ROOT FILES =====
 !index.html
+!services.html
 !styles.css
 !script.js
 !README.md

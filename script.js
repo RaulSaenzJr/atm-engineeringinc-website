@@ -25,19 +25,23 @@ function setActiveLink() {
 
 window.addEventListener('scroll', setActiveLink);
 
-// ===== SERVICES DROPDOWN (mobile touch toggle) =====
-const dropdownItem = document.querySelector('.nav-item.has-dropdown');
+// ===== NAV DROPDOWNS (mobile touch toggle) =====
+const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
+const canHover = window.matchMedia('(hover: hover)').matches;
 
-dropdownItem.addEventListener('click', function (e) {
-  const isLink = e.target.classList.contains('dropdown-link');
-  if (!isLink) {
+dropdownItems.forEach(item => {
+  item.addEventListener('click', function (e) {
+    const isLink = e.target.classList.contains('dropdown-link');
+    if (isLink || canHover) return;
     e.preventDefault();
     this.classList.toggle('open');
-  }
+  });
 });
 
 document.addEventListener('click', function (e) {
-  if (!dropdownItem.contains(e.target)) {
-    dropdownItem.classList.remove('open');
-  }
+  dropdownItems.forEach(item => {
+    if (!item.contains(e.target)) {
+      item.classList.remove('open');
+    }
+  });
 });
