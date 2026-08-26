@@ -52,23 +52,10 @@ ul {
   justify-content: center;
 }
 
-.logo-placeholder {
+.logo-img {
   width: 160px;
   height: 60px;
-  background-color: #1a1a1a;
-  border: 2px dashed #444;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-placeholder span {
-  color: #555;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  object-fit: contain;
 }
 
 /* ===== NAVIGATION ===== */
