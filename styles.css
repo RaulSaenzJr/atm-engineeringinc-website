@@ -349,6 +349,26 @@ ul {
   background-color: #111;
 }
 
+.service-card-engineering {
+  position: relative;
+  background-image: url('public/blueprints.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.service-card-engineering::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+.service-card-engineering > * {
+  position: relative;
+  z-index: 1;
+}
+
 .service-number {
   font-size: 0.75rem;
   font-weight: 700;
@@ -574,7 +594,7 @@ ul {
 /* Left panel */
 .contact-info {
   position: relative;
-  background-image: url('public/pexels-mjlo-37376856.jpg');
+  background-image: url('public/2792146.jpg');
   background-size: cover;
   background-position: center top;
   border-right: 1px solid #1e1e1e;
