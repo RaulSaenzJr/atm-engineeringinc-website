@@ -349,31 +349,6 @@ ul {
   background-color: #111;
 }
 
-.service-card-blueprint {
-  position: relative;
-  background-image: url('public/blueprints.webp');
-  background-size: cover;
-  background-position: center;
-}
-
-.service-card-blueprint::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.72);
-  z-index: 0;
-}
-
-.service-card-blueprint .service-name,
-.service-card-blueprint .service-desc {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-}
-
-.service-card-blueprint > * {
-  position: relative;
-  z-index: 1;
-}
-
 .service-number {
   font-size: 0.75rem;
   font-weight: 700;
