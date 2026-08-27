@@ -1,6 +1,18 @@
 // ===== AUTO COPYRIGHT YEAR =====
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
+// ===== KEEP ANCHOR SCROLL CLEAR OF STICKY HEADER =====
+const siteHeader = document.querySelector('.site-header');
+
+function setHeaderHeightVar() {
+  if (!siteHeader) return;
+  document.documentElement.style.setProperty('--header-h', `${siteHeader.offsetHeight + 12}px`);
+}
+
+setHeaderHeightVar();
+window.addEventListener('resize', setHeaderHeightVar);
+window.addEventListener('orientationchange', setHeaderHeightVar);
+
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
