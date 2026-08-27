@@ -311,6 +311,12 @@ ul {
   color: #0a0a0a;
 }
 
+.section-cta {
+  margin-top: 3rem;
+  opacity: 1;
+  animation: none;
+}
+
 /* ===== SHARED SECTION STYLES ===== */
 .page-section {
   min-height: 100vh;
