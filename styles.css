@@ -1134,6 +1134,14 @@ ul {
   object-fit: contain;
 }
 
+.product-photo-wrap-dark {
+  background-color: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
 .spec-list {
   text-align: left;
   max-width: 640px;
@@ -1166,8 +1174,29 @@ ul {
   margin-top: 1.25rem;
 }
 
+.brand-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.brand-credit-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand-credit-text {
+  font-size: 0.82rem;
+  color: #777;
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
-  .product-photo-wrap {
+  .product-photo-wrap,
+  .product-photo-wrap-dark {
     height: 320px;
     padding: 2rem;
   }
