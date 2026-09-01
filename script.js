@@ -77,7 +77,13 @@ if (navToggle && siteHeader) {
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  navLinks.forEach(link => link.addEventListener('click', closeNav));
+  document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const isDropdownToggle = link.parentElement.classList.contains('has-dropdown');
+      if (isDropdownToggle && !canHover) return;
+      closeNav();
+    });
+  });
 }
 
 // ===== PRODUCT CAROUSEL =====
