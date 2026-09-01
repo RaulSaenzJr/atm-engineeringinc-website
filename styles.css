@@ -948,6 +948,25 @@ ul {
   color: #0a0a0a;
 }
 
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  min-height: 1.4em;
+}
+
+.form-status-success {
+  color: #7fd99a;
+}
+
+.form-status-error {
+  color: #e08a8a;
+}
+
 @media (max-width: 768px) {
   .contact-inner {
     grid-template-columns: 1fr;

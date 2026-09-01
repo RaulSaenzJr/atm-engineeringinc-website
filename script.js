@@ -86,6 +86,45 @@ if (navToggle && siteHeader) {
   });
 }
 
+// ===== CONTACT FORM (AJAX submit, stays on site) =====
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  const submitButton = contactForm.querySelector('.form-submit');
+  const statusEl = contactForm.querySelector('.form-status');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    statusEl.textContent = '';
+    statusEl.classList.remove('form-status-success', 'form-status-error');
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        statusEl.textContent = "Thanks for reaching out — we'll get back to you shortly.";
+        statusEl.classList.add('form-status-success');
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      statusEl.textContent = 'Something went wrong. Please email us directly at info@atm-engineeringinc.com.';
+      statusEl.classList.add('form-status-error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send Message';
+    }
+  });
+}
+
 // ===== PRODUCT CAROUSEL =====
 const carousel = document.getElementById('product-carousel');
 
