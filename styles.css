@@ -607,14 +607,6 @@ ul {
   background-color: #111;
 }
 
-.service-number {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #444;
-  margin-bottom: 1.5rem;
-}
-
 .service-name {
   font-size: 1.3rem;
   font-weight: 700;
@@ -661,38 +653,30 @@ ul {
 }
 
 .product-card {
-  background-color: #111;
-  border: 1px solid #1e1e1e;
-  border-top: 3px solid #1e1e1e;
+  background-color: #f0ede6;
+  border: 1px solid #ddd8cc;
+  border-top: 3px solid #cfc9ba;
   padding: 2.5rem 2rem;
   text-align: left;
   transition: border-top-color 0.25s ease, background-color 0.25s ease;
 }
 
 .product-card:hover {
-  border-top-color: #fff;
-  background-color: #141414;
-}
-
-.product-number {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: #444;
-  margin-bottom: 1.25rem;
+  border-top-color: #0a0a0a;
+  background-color: #e8e3d8;
 }
 
 .product-name {
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: #f0f0f0;
+  color: #0a0a0a;
   margin-bottom: 1rem;
 }
 
 .product-desc {
   font-size: 0.95rem;
-  color: #666;
+  color: #444;
   line-height: 1.75;
   margin-bottom: 1.75rem;
 }
@@ -702,15 +686,15 @@ ul {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #888;
-  border-bottom: 1px solid #333;
+  color: #333;
+  border-bottom: 1px solid #ccc;
   padding-bottom: 2px;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .product-link:hover {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: #0a0a0a;
+  border-bottom-color: #0a0a0a;
 }
 
 @media (max-width: 640px) {
