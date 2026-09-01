@@ -19,8 +19,15 @@
           </a>
         </div>
 
+        <!-- Mobile nav toggle -->
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
         <!-- Navigation -->
-        <nav class="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul class="nav-list">
             <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
             <li class="nav-item has-dropdown">
@@ -69,6 +76,7 @@
           autoplay
           muted
           loop
+          playsinline
           poster="public/pexels-francesco-ungaro-9973280.jpg"
         >
           <source src="public/atm-engineering-superyacht-hero-vid.mp4" type="video/mp4" />

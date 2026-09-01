@@ -56,7 +56,29 @@ document.addEventListener('click', function (e) {
       item.classList.remove('open');
     }
   });
+
+  if (siteHeader && siteHeader.classList.contains('nav-open') && !siteHeader.contains(e.target)) {
+    closeNav();
+  }
 });
+
+// ===== MOBILE NAV TOGGLE (hamburger) =====
+const navToggle = document.querySelector('.nav-toggle');
+
+function closeNav() {
+  if (!siteHeader || !navToggle) return;
+  siteHeader.classList.remove('nav-open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}
+
+if (navToggle && siteHeader) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = siteHeader.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinks.forEach(link => link.addEventListener('click', closeNav));
+}
 
 // ===== PRODUCT CAROUSEL =====
 const carousel = document.getElementById('product-carousel');

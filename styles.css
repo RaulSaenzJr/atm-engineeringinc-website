@@ -93,32 +93,103 @@ ul {
   color: #fff;
 }
 
+.nav-toggle {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .header-inner {
-    flex-direction: column;
-    padding: 1rem 1.25rem 0.75rem;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.85rem 1.25rem;
+    gap: 0;
   }
 
-  .main-nav {
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-toggle-bar {
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-header.nav-open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .site-header.nav-open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.nav-open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .main-nav,
+  .header-contact {
+    display: none;
     width: 100%;
   }
 
+  .site-header.nav-open .main-nav,
+  .site-header.nav-open .header-contact {
+    display: flex;
+  }
+
   .nav-list {
-    flex-wrap: wrap;
-    row-gap: 0.4rem;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding-top: 0.5rem;
   }
 
   .nav-link {
-    padding: 0.4rem 0.75rem;
-    font-size: 0.8rem;
+    padding: 0.75rem 0.25rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .dropdown-arrow {
+    margin-left: auto;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    display: none;
+    min-width: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .nav-item.has-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-link {
+    padding: 0.6rem 0.75rem;
   }
 
   .header-contact {
     flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
-    padding-bottom: 0.5rem;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.75rem 0.25rem 1rem;
+    border-top: 1px solid #1e1e1e;
+    margin-top: 0.25rem;
   }
 }
 
@@ -302,6 +373,16 @@ ul {
   opacity: 0;
   animation: fadeSlideUp 0.8s ease forwards;
   animation-delay: 0.85s;
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
 }
 
 .hero-cta {
