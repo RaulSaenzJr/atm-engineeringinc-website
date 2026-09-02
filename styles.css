@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: #141414;
   color: #f0f0f0;
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 16px;
@@ -33,7 +33,7 @@ ul {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #0a0a0a;
+  background-color: #141414;
   border-bottom: 1px solid #1e1e1e;
 }
 
@@ -311,6 +311,7 @@ ul {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  filter: brightness(1.2) contrast(1.03);
 }
 
 /* Dark gradient overlay */
@@ -320,8 +321,8 @@ ul {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.72) 100%
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.58) 100%
   );
   z-index: 1;
 }
@@ -464,7 +465,7 @@ ul {
   background: linear-gradient(
     to bottom,
     transparent 55%,
-    #0a0a0a 100%
+    #141414 100%
   );
 }
 
@@ -478,9 +479,9 @@ ul {
 
 /* ===== PRODUCT CAROUSEL ===== */
 .product-carousel {
-  background-color: #0a0a0a;
+  background-color: #141414;
   background-image:
-    linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6)),
+    linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)),
     url('public/blueprints.webp');
   background-size: cover;
   background-position: center;
@@ -591,14 +592,14 @@ ul {
 }
 
 .service-card {
-  background-color: #0a0a0a;
+  background-color: #141414;
   padding: 3rem 2.5rem;
   text-align: left;
   transition: background-color 0.25s ease;
 }
 
 .service-card:hover {
-  background-color: #111;
+  background-color: #1c1c1c;
 }
 
 .service-name {
@@ -728,7 +729,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   padding: 6rem 4rem;
-  background-color: #0a0a0a;
+  background-color: #141414;
 }
 
 .about-title {
@@ -882,7 +883,7 @@ ul {
 
 /* Right panel */
 .contact-form-wrap {
-  background-color: #0a0a0a;
+  background-color: #141414;
   padding: 6rem 4rem;
   display: flex;
   flex-direction: column;
@@ -917,7 +918,7 @@ ul {
 }
 
 .form-input {
-  background-color: #111;
+  background-color: #1a1a1a;
   border: 1px solid #222;
   color: #f0f0f0;
   font-family: inherit;
@@ -993,7 +994,7 @@ ul {
 
 /* ===== FOOTER ===== */
 .site-footer {
-  background-color: #050505;
+  background-color: #0f0f0f;
   border-top: 1px solid #1e1e1e;
 }
 
@@ -1148,7 +1149,7 @@ ul {
 }
 
 .product-photo-wrap-dark {
-  background-color: #0a0a0a;
+  background-color: #141414;
   display: flex;
   align-items: center;
   justify-content: center;
