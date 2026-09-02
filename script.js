@@ -13,6 +13,32 @@ setHeaderHeightVar();
 window.addEventListener('resize', setHeaderHeightVar);
 window.addEventListener('orientationchange', setHeaderHeightVar);
 
+// ===== LAND ON THE RIGHT SECTION, THEN ENABLE SMOOTH SCROLLING =====
+// scroll-behavior: smooth is great for in-page nav clicks, but it fights the
+// browser's own scroll-to-#hash-on-load: that jump gets animated too, and it
+// can happen a beat after 'load' (once media/images finish settling into
+// their final layout), so it's liable to be interrupted or just miss,
+// leaving the page stuck near the top. We force the correct (instant)
+// position ourselves once things have settled, then turn smooth scrolling
+// on for every later, user-driven navigation.
+function landOnHashThenEnableSmoothScroll() {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+      document.documentElement.classList.add('smooth-scroll');
+    });
+  });
+}
+
+if (document.readyState === 'complete') {
+  landOnHashThenEnableSmoothScroll();
+} else {
+  window.addEventListener('load', landOnHashThenEnableSmoothScroll);
+}
+
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav-link');

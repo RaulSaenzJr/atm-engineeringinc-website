@@ -6,8 +6,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: var(--header-h, 90px);
+}
+
+/* Smooth scrolling is turned on by script.js only after the page has fully
+   loaded, so the initial scroll to a #hash on load lands correctly instead
+   of getting interrupted by layout shifting under it (see script.js). */
+html.smooth-scroll {
+  scroll-behavior: smooth;
 }
 
 body {
