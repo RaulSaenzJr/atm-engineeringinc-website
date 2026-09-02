@@ -179,6 +179,10 @@ ul {
     display: block;
   }
 
+  .dropdown-menu::before {
+    content: none;
+  }
+
   .dropdown-link {
     padding: 0.6rem 0.75rem;
   }
@@ -236,6 +240,15 @@ ul {
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 200;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
 }
 
 .nav-item.has-dropdown:hover .dropdown-menu,
