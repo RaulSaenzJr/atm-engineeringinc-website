@@ -1194,6 +1194,17 @@ ul {
   line-height: 1.5;
 }
 
+.brand-credit-link {
+  color: #999;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.brand-credit-link:hover {
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .product-photo-wrap,
   .product-photo-wrap-dark {
