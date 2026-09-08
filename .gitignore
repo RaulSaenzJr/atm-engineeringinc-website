@@ -22,6 +22,14 @@
 !README.md
 !.gitignore
 
+# ===== CLIENT PROPERTY (unused photos/videos, not part of the site) =====
+# atm-property/ holds original and AI-generated images/videos the client
+# sent or we created that aren't used anywhere on the live site. They stay
+# out of the repo entirely (not just the deploy) since it's his property,
+# not site content — hand it off separately (zip/Drive/email) rather than
+# tracking it here. Already excluded by the top-level "*" rule above; this
+# comment just documents why, so no one adds a "!atm-property/*" rule later.
+
 # ===== PUBLIC ASSETS =====
 # Images are tracked; videos are not (too large — host externally)
 !public/*.jpg
