@@ -1199,6 +1199,10 @@ ul {
   color: #0a0a0a;
 }
 
+.section-light .brand-credit-text {
+  color: #444;
+}
+
 .section-light .brand-credit-link {
   color: #333;
 }
@@ -1524,13 +1528,19 @@ ul {
 .mini-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: start;
   gap: 1.5rem;
   margin-top: 2.5rem;
   text-align: left;
 }
 
 .mini-gallery-card .product-photo-wrap {
+  height: 260px;
   margin-bottom: 1.25rem;
+}
+
+.mini-gallery-card .product-photo-wrap .product-photo {
+  max-height: 100%;
 }
 
 .mini-gallery-title {
