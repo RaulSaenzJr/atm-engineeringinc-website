@@ -1158,14 +1158,21 @@ ul {
 
 .section-light .section-eyebrow {
   color: #8a8375;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .section-light .section-title {
   color: #0a0a0a;
 }
 
-.section-light .section-intro {
+.section-light .section-intro,
+.section-light .about-text {
   color: #444;
+}
+
+.section-light .about-title {
+  color: #0a0a0a;
 }
 
 .section-light .capability-item {
@@ -1173,6 +1180,22 @@ ul {
 }
 
 .section-light .capability-item::before {
+  color: #0a0a0a;
+}
+
+.section-light .resource-link {
+  background-color: #fff;
+  border-color: #0a0a0a;
+  color: #0a0a0a;
+}
+
+.section-light .resource-link:hover {
+  background-color: #f0ede6;
+  border-color: #0a0a0a;
+  color: #0a0a0a;
+}
+
+.section-light .resource-link-tag {
   color: #0a0a0a;
 }
 
