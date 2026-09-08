@@ -1147,6 +1147,78 @@ ul {
   }
 }
 
+/* ===== WARRANTY FORMS (Registration & Claim) ===== */
+.form-narrow {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .form-row,
+  .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-fieldset-legend {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444;
+  padding: 0 0 0.25rem;
+  border-bottom: 1px solid #1e1e1e;
+  margin-bottom: 0.25rem;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.warranty-callout {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #1a1a1a;
+  border-left: 3px solid #f0f0f0;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.form-submit-note {
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.6;
+}
+
 /* ===== PRODUCT DETAIL PAGE ===== */
 .product-photo-wrap {
   background-color: #f0ede6;

@@ -112,44 +112,54 @@ if (navToggle && siteHeader) {
   });
 }
 
-// ===== CONTACT FORM (AJAX submit, stays on site) =====
-const contactForm = document.querySelector('.contact-form');
+// ===== AJAX FORMS (Contact, Warranty Registration — stay on site) =====
+// Any form with class "contact-form" is wired up the same way. Per-form
+// confirmation/error copy can be overridden with data-success-message and
+// data-error-message attributes; otherwise the contact form's original text
+// is used as the default.
+const ajaxForms = document.querySelectorAll('.contact-form');
 
-if (contactForm) {
-  const submitButton = contactForm.querySelector('.form-submit');
-  const statusEl = contactForm.querySelector('.form-status');
+ajaxForms.forEach((form) => {
+  const submitButton = form.querySelector('.form-submit');
+  const statusEl = form.querySelector('.form-status');
+  if (!submitButton || !statusEl) return;
 
-  contactForm.addEventListener('submit', async (e) => {
+  const idleText = submitButton.textContent;
+  const sendingText = submitButton.dataset.sendingText || 'Sending...';
+  const successMessage = form.dataset.successMessage || "Thanks for reaching out — we'll get back to you shortly.";
+  const errorMessage = form.dataset.errorMessage || 'Something went wrong. Please email us directly at info@atm-engineeringinc.com.';
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
+    submitButton.textContent = sendingText;
     statusEl.textContent = '';
     statusEl.classList.remove('form-status-success', 'form-status-error');
 
     try {
-      const response = await fetch(contactForm.action, {
+      const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(contactForm),
+        body: new FormData(form),
         headers: { Accept: 'application/json' },
       });
 
       if (response.ok) {
-        contactForm.reset();
-        statusEl.textContent = "Thanks for reaching out — we'll get back to you shortly.";
+        form.reset();
+        statusEl.textContent = successMessage;
         statusEl.classList.add('form-status-success');
       } else {
         throw new Error('Form submission failed');
       }
     } catch (err) {
-      statusEl.textContent = 'Something went wrong. Please email us directly at info@atm-engineeringinc.com.';
+      statusEl.textContent = errorMessage;
       statusEl.classList.add('form-status-error');
     } finally {
       submitButton.disabled = false;
-      submitButton.textContent = 'Send Message';
+      submitButton.textContent = idleText;
     }
   });
-}
+});
 
 // ===== PRODUCT CAROUSEL =====
 const carousel = document.getElementById('product-carousel');
