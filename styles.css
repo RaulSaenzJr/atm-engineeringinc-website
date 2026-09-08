@@ -1216,6 +1216,23 @@ ul {
   color: #0a0a0a;
 }
 
+.section-light .spec-name,
+.section-light .mini-gallery-title {
+  color: #0a0a0a;
+}
+
+.section-light .spec-desc {
+  color: #555;
+}
+
+.section-light .spec-grid li {
+  border-bottom-color: #ddd8cc;
+}
+
+.section-light .diagram-caption {
+  color: #555;
+}
+
 .section-light .brand-credit-text {
   color: #444;
 }
