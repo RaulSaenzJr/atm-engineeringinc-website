@@ -1184,14 +1184,56 @@ ul {
   color: #0a0a0a;
 }
 
-.section-light .hero-cta {
+.section-light .hero-cta,
+.section-light .form-submit {
   border-color: #0a0a0a;
   color: #0a0a0a;
 }
 
-.section-light .hero-cta:hover {
+.section-light .hero-cta:hover,
+.section-light .form-submit:hover {
   background-color: #0a0a0a;
   color: #fff;
+}
+
+.section-light .form-fieldset-legend {
+  color: #8a8375;
+  border-bottom-color: #ddd8cc;
+}
+
+.section-light .form-label {
+  color: #6b6558;
+}
+
+.section-light .form-optional {
+  color: #b5ae9d;
+}
+
+.section-light .form-input {
+  background-color: #fff;
+  border-color: #ddd8cc;
+  color: #0a0a0a;
+}
+
+.section-light .form-input::placeholder {
+  color: #b5ae9d;
+}
+
+.section-light .form-input:focus {
+  border-color: #0a0a0a;
+}
+
+.section-light .form-note,
+.section-light .form-submit-note {
+  color: #6b6558;
+}
+
+.section-light .form-status-success {
+  color: #1e7a43;
+}
+
+.section-light .form-status-error {
+  color: #b23a3a;
 }
 
 /* ===== WARRANTY FORMS (Registration & Claim) ===== */
