@@ -168,6 +168,8 @@ ul {
 
   .dropdown-arrow {
     margin-left: auto;
+    padding: 0.75rem;
+    margin-right: -0.75rem;
   }
 
   .dropdown-menu {

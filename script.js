@@ -64,15 +64,22 @@ function setActiveLink() {
 window.addEventListener('scroll', setActiveLink);
 
 // ===== NAV DROPDOWNS (mobile touch toggle) =====
+// The arrow toggles the submenu; the link text itself still navigates
+// normally (e.g. to a #services/#products section on the home page) —
+// touch devices have no hover to reveal the submenu, so tapping the arrow
+// is the only way to see it, but the label must stay a real link.
 const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
 const canHover = window.matchMedia('(hover: hover)').matches;
 
 dropdownItems.forEach(item => {
-  item.addEventListener('click', function (e) {
-    const isLink = e.target.classList.contains('dropdown-link');
-    if (isLink || canHover) return;
+  const arrow = item.querySelector('.dropdown-arrow');
+  if (!arrow) return;
+
+  arrow.addEventListener('click', function (e) {
+    if (canHover) return;
     e.preventDefault();
-    this.classList.toggle('open');
+    e.stopPropagation();
+    item.classList.toggle('open');
   });
 });
 
@@ -103,12 +110,11 @@ if (navToggle && siteHeader) {
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
+  // Arrow taps stop propagation before reaching here (see dropdown toggle
+  // above), so any click that arrives at this listener is a real
+  // navigation — always close the mobile menu for it.
   document.querySelectorAll('.nav-link, .dropdown-link').forEach(link => {
-    link.addEventListener('click', () => {
-      const isDropdownToggle = link.parentElement.classList.contains('has-dropdown');
-      if (isDropdownToggle && !canHover) return;
-      closeNav();
-    });
+    link.addEventListener('click', () => closeNav());
   });
 }
 
