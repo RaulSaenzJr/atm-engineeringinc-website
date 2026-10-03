@@ -39,8 +39,7 @@ ul {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #141414;
-  border-bottom: 1px solid #1e1e1e;
+  padding: 0.75rem 1rem;
 }
 
 .header-inner {
@@ -51,6 +50,11 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  background-color: rgba(25, 25, 25, 0.8);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* ===== LOGO ===== */
@@ -218,7 +222,7 @@ ul {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #aaa;
+  color: #fff;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
@@ -1506,6 +1510,14 @@ ul {
   .product-photo-wrap-dark {
     height: 320px;
     padding: 2rem;
+  }
+}
+
+/* Applied via <div class="about-inner about-inner--flip"> to put the photo on
+   the right; stacks photo-first on small screens, same as the default. */
+@media (min-width: 769px) {
+  .about-inner--flip > .product-photo-wrap-dark {
+    order: 2;
   }
 }
 
