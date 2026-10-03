@@ -107,10 +107,12 @@
             the submit button below.
           -->
           <form
-            class="form-narrow"
-            action="https://formspree.io/f/REPLACE_WITH_CLAIM_FORM_ID"
+            class="contact-form form-narrow"
+            name="warranty-claim"
             method="POST"
             enctype="multipart/form-data"
+            data-netlify="true"
+            data-netlify-honeypot="_gotcha"
             data-success-message="Your warranty claim has been received. ATM Engineering will review your submission and contact you regarding next steps and RMA authorization if applicable. Please do not ship your product until you receive authorization."
           >
             <!-- Honeypot spam trap: real users never see or fill this field -->
@@ -200,14 +202,16 @@
                 <p class="form-note">A receipt or invoice as a JPG, PNG, or PDF.</p>
               </div>
               <div class="form-group">
-                <label for="claim-photos" class="form-label">Supporting Photos <span class="form-optional">(optional, but helpful)</span></label>
-                <input type="file" id="claim-photos" name="supporting_photos" class="form-input" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple />
+                <label for="claim-photo-1" class="form-label">Supporting Photos <span class="form-optional">(optional, but helpful)</span></label>
+                <input type="file" id="claim-photo-1" aria-label="Supporting photo 1" name="supporting_photo_1" class="form-input" accept=".jpg,.jpeg,.png,image/jpeg,image/png" />
+                <input type="file" id="claim-photo-2" aria-label="Supporting photo 2" name="supporting_photo_2" class="form-input" accept=".jpg,.jpeg,.png,image/jpeg,image/png" />
+                <input type="file" id="claim-photo-3" aria-label="Supporting photo 3" name="supporting_photo_3" class="form-input" accept=".jpg,.jpeg,.png,image/jpeg,image/png" />
                 <p class="form-note">JPG or PNG. On a phone, you can take a new photo or choose one from your library. Not required — some issues aren't visible in a photo.</p>
               </div>
             </fieldset>
 
-            <button type="submit" class="form-submit" disabled>Online Submission Coming Soon</button>
-            <p class="form-submit-note">Online claim submission will be available soon. In the meantime, please call us at <a href="tel:+13059263813" class="brand-credit-link">(305) 926-3813</a> or email <a href="mailto:info@atm-engineeringinc.com" class="brand-credit-link">info@atm-engineeringinc.com</a> to start a warranty claim.</p>
+            <button type="submit" class="form-submit">Submit Claim</button>
+            <p class="form-submit-note">Files must total 8 MB or less per submission. For larger files or questions, call us at <a href="tel:+13059263813" class="brand-credit-link">(305) 926-3813</a> or email <a href="mailto:info@atm-engineeringinc.com" class="brand-credit-link">info@atm-engineeringinc.com</a>.</p>
             <p class="form-note">Information and files submitted through this form are used by ATM Engineering to process your warranty claim and aren't shared for any other purpose.</p>
             <p class="form-status" role="status" aria-live="polite"></p>
           </form>
