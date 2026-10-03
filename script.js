@@ -133,7 +133,7 @@ ajaxForms.forEach((form) => {
   const idleText = submitButton.textContent;
   const sendingText = submitButton.dataset.sendingText || 'Sending...';
   const successMessage = form.dataset.successMessage || "Thanks for reaching out — we'll get back to you shortly.";
-  const errorMessage = form.dataset.errorMessage || 'Something went wrong. Please email us directly at info@atm-engineeringinc.com.';
+  const errorMessage = form.dataset.errorMessage || 'Something went wrong. Please email us directly at mikeatmeng@gmail.com.';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
