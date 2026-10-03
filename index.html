@@ -253,9 +253,12 @@
           <div class="contact-form-wrap">
             <form
               class="contact-form"
-              action="https://formspree.io/f/mnpqjerd"
+              name="contact"
               method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="_gotcha"
             >
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
               <div class="form-group">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required />
