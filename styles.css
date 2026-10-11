@@ -114,6 +114,11 @@ ul {
     gap: 0;
   }
 
+  .logo-img {
+    width: 170px;
+    height: 64px;
+  }
+
   .nav-toggle {
     display: flex;
     flex-direction: column;
