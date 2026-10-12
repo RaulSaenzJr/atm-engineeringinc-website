@@ -1329,6 +1329,23 @@ ul {
   text-align: left;
 }
 
+/* Left-align under the spec grid instead of centering (ASP Family section).
+   Width matches one spec-grid column (760px max-width, 2rem gap, 2 columns). */
+.resource-list--left {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: calc((760px - 2rem) / 2);
+}
+
+.resource-list--left .resource-link {
+  color: #1f2328;
+  font-weight: 700;
+}
+
+.resource-list--left .resource-link:hover {
+  color: #ffffff;
+}
+
 .resource-link {
   display: flex;
   align-items: center;
