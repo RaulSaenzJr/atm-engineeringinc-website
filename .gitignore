@@ -18,6 +18,8 @@
 !styles.css
 !script.js
 !README.md
+!sitemap.xml
+!robots.txt
 !.gitignore
 
 # ===== CLIENT PROPERTY (unused photos/videos, not part of the site) =====
